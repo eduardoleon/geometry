@@ -1,0 +1,31 @@
+\begin{problem}
+Muestre que los grassmannianos complejos son variedades Kähler.
+\end{problem}
+
+\begin{solution}
+En la tarea anterior, construimos un atlas gigantesco para el grassmanniano $G = \operatorname{Gr}(k, \mathbb C^n)$. En esta tarea reutilizaremos dicho atlas. Recordemos sus propiedades más importantes:
+
+\begin{itemize}
+    \item Para cada automorfismo lineal $\rho \in \GL(n, \mathbb C)$, la carta $\varphi : V_\rho \to \Sigma$ identifica un abierto denso $V_\rho \subset G$ con el espacio $\Sigma$ de secciones lineales $\sigma : \mathbb C^k \to \mathbb C^n$ de la proyección $\mu : \mathbb C^n \to \mathbb C^k$ sobre las $k$ primeras coordenadas, i.e., tales que $\mu \circ \sigma = \id$.
+    
+    \item Toda sección $\sigma \in \Sigma$ está determinada por $\tilde \sigma = \nu \circ \sigma$, donde $\nu : \mathbb C^n \to \mathbb C^{n-k}$ es la proyección sobre las coordenadas descartadas por $\mu$.
+    
+    \item Sean $\rho, \rho' \in \GL(n, \mathbb C)$ y sea $\chi = \rho' \circ \rho^{-1}$. El cambio de coordenadas en $V_\rho \cap V_{\rho'}$ es
+    $$\varphi_{\rho'} = (\chi \circ \varphi_\rho) \circ (\mu \circ \chi \circ \varphi_\rho)^{-1}$$
+    
+    \item Las cartas inducidas por el subgrupo $\Un(n) \subset \GL(n, \mathbb C)$ son más que suficientes para cubrir $G$.
+\end{itemize}
+
+Sea $\rho \in \Un(n)$ una referencia unitaria. Definamos el potencial de Kähler local $\psi_\rho : V_\rho \to \mathbb R$ como
+$$\psi_\rho = \log \det (\varphi_\rho^\star \circ \varphi_\rho) = \log \det (\id + \, \tilde \varphi_\rho^\star \circ \tilde \varphi_\rho)$$
+
+Sea $\rho' \in U(n)$ otra referencia unitaria y sea $\chi = \rho' \circ \rho^{-1}$. Puesto que $\chi$ también es unitario,
+$$\psi_{\rho'} - \psi_\rho = -\log \det (\mu \circ \chi \circ \varphi_\rho) - \log \det (\mu \circ \chi \circ \varphi_\rho)^\star$$
+
+Los términos en el miembro derecho son complejos conjugados cuya parte real está bien definida. En la suma, las partes imaginarias se cancelan y el resultado es un número real bien definido. Por otro lado, uno de los términos es holomorfo y el otro es antiholomorfo. Por ende, $i \Kp$ anula a ambos y $\omega = i \Kp \psi$ es una forma global bien definida.
+
+Sólo falta verificar que $g(X,Y) = \omega(X,JY)$ sea positiva definida. Por la fórmula de Jacobi,
+$$\det (\id + \, \tilde \varphi_\rho^\star \circ \tilde \varphi_\rho) = 1 + \tr (\tilde \varphi_\rho^\star \circ \tilde \varphi_\rho) + \dots$$
+
+Entonces, en el punto $\pi \in V_\rho$ con coordenadas $\tilde \varphi_\rho(\pi) = 0$, la métrica se reduce a $g_\pi = \tr (d\tilde \varphi_\rho^\star \circ d\tilde \varphi_\rho)$, el producto interno de Frobenius sobre el espacio de aplicaciones lineales $\lambda : \mathbb C^k \to \mathbb C^{n-k}$. Por supuesto, para todo punto $\pi \in G$, existe una referencia $\rho \in \Un(n)$ en la cual $\tilde \varphi_\rho(\pi) = 0$. Por ende, $g$ es positiva definida en todo el grassmanniano $G$.
+\end{solution}

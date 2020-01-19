@@ -1,0 +1,14 @@
+\begin{problem}
+Considere los grupos de Lie $\Sp(2n)$, $\Or(2n)$ y $\GL(n, \mathbb C)$. Muestre que la intersección de dos cualesquiera de ellos es igual a $\Un(n)$.
+\end{problem}
+
+\begin{solution}
+Sea $J \in \Un(n)$ la multiplicación por $i$. Dado un automorfismo $A \in \GL(2n, \mathbb R)$ arbitrario,
+\begin{itemize}
+    \item $A \in \Sp(2n)$ si y sólo si $A$ preserva $J$ como forma bilineal. Matricialmente, $A^T J A = J$.
+    \item $A \in \Or(2n)$ si y sólo si $A$ preserva el producto interno euclidiano. Matricialmente, $A^T A = I$.
+    \item $A \in \GL(n, \mathbb C)$ si y sólo si $A$ preserva $J$ como endomorfismo lineal. Matricialmente, $A^{-1} J A = J$.
+\end{itemize}
+
+Por álgebra matricial, puesto que $A, J$ son invertibles, dos cualesquiera de estas condiciones implican la tercera. Cuando $A \in \GL(n, \mathbb C)$, la transpuesta real $A^T$ corresponde a la transpuesta conjugada $A^\dagger$. Por lo tanto, $A \in \GL(n, \mathbb C) \cap \Or(2n)$ si y sólo si $A^\dagger A = I$, si y sólo si $A$ es una matriz unitaria.
+\end{solution}

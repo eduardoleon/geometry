@@ -1,0 +1,43 @@
+\begin{problem}
+\leavevmode
+\begin{enumerate}
+    \item Muestre que la métrica de Fubini-Study en el abierto $U_0 = \{ [z_0 : z_1] \in \mathbb {CP}^1 \mid z_0 \ne 0 \}$ está dada por
+    $$\omega_\mathrm{FS} = \frac {dx \wedge dy} {(1 + x^2 + y^2)^2}$$
+    
+    \item Calcule el área total de $\mathbb {CP}^1 = \mathbb C \cup \{ \infty \}$ con respecto a $\omega_\mathrm{FS}$:
+    $$\int_{\mathbb {CP}^1} \omega_\mathrm{FS} = \int_{\mathbb R^2} \frac {dx \, dy} {(1 + x^2 + y^2)^2}$$
+    
+    \item Muestre que $\omega_\mathrm{FS} = \tfrac 14 \omega_\mathrm{std}$, donde $\omega_\mathrm{std}$ es la forma de área estándar de $S^2$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}
+    \item Por definición, los diferenciales coordenados holomorfo y antiholomorfo son
+    \begin{align*}
+        dz = dx + i \, dy && d\bar z = dx - i \, dy
+    \end{align*}
+    
+    Por definición, la métrica de Fubini-Study es
+    $$\omega_\mathrm{FS} = \h \Kp \log (1 + z \bar z) = \frac {\h \, dz \wedge d\bar z} {(1 + z \bar z)^2} = \frac {dx \wedge dy} {(1 + x^2 + y^2)^2}$$
+    
+    \item Pasando a coordenadas polares,
+    $$\int_{\mathbb {CP}^1} \omega_\mathrm{FS} = \int_{\mathbb R^2} \frac {r \, dr \, d\theta} {(1 + r^2)^2} = \int_0^\infty \frac {2 \pi r \, dr} {(1 + r^2)^2} = \frac {-\pi} {1 + r^2} \Bigg|_0^\infty = \pi$$
+    
+    \item Diferenciando la parametrización del problema anterior,
+    \begin{align*}
+        \mathbf p_\theta  & = \cos \varphi \mathbf q_\theta & \mathbf q_\theta  & = -\sin \theta  \mathbf i + \cos \theta  \mathbf j \\
+        \mathbf p_\varphi & = \cos \varphi \mathbf p_h      & \mathbf p_\varphi & = -\sin \varphi \mathbf q + \cos \varphi \mathbf k
+    \end{align*}
+    
+    Por ende, la forma de área estándar es
+    $$\omega_\mathrm{std} = d\theta \wedge dh, \qquad \qquad \| \mathbf p_\theta \times \mathbf p_h \| = \| \mathbf q_\theta \times \mathbf p_\varphi \| = \| \mathbf p \| = 1$$
+    
+    Diferenciando la función altura del problema anterior,
+    $$h = 1 - \frac {2r} {1 + r^2} \implies dh = \frac {4r \, dr} {(1 + r^2)^2}$$
+    
+    Sustituyendo en la expresión original,
+    $$\omega_\mathrm{FS} = \frac {r \, d\theta \wedge dr } {(1 + r^2)^2} = \tfrac 14 d\theta \wedge dh = \tfrac 14 \omega_{std}$$
+\end{enumerate}
+\end{solution}

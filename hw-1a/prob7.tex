@@ -1,0 +1,16 @@
+\begin{problem}
+Sea $(M, \eta)$ una variedad de contacto y sea $\pi : M \times \mathbb R \to M$ la proyección sobre $M$. Pruebe que $\omega = d(e^t \pi^\star \eta)$ es una forma simpléctica sobre $M \times \mathbb R$.
+\end{problem}
+
+\begin{solution}
+Por definición, $\omega$ es exacta, por ende $\omega$ es cerrada. Sólo falta verificar que $\omega$ es no degenerada y automáticamente $\omega$ será simpléctica. Pongamos $z = e^t$ para facilitar los cálculos. Entonces,
+$$\omega = d(z \, \pi^\star \eta) = dz \wedge \pi^\star \eta + z \, \pi^\star d\eta$$
+
+Puesto que $\omega$ es de grado par, sus sumandos conmutan. Por la fórmula binomial de Newton,
+$$\omega^n = \sum_{k=0}^n \binom nk \, (dz \wedge \pi^\star \eta)^k \wedge (z \, \pi^\star d\eta)^{n-k}$$
+
+Los términos con $k \ge 2$ se anulan, porque $dz^2 = 0$. Si tomamos $\dim M = 2n-1$, el término con $k = 0$ también se anula, porque $(d\eta)^n$ es una $2n$-forma sobre una variedad de dimensión $2n-1$. Entonces,
+$$\omega^n = dy \wedge \pi^\star \varphi, \qquad y = z^n, \qquad \varphi = \eta \wedge (d\eta)^{n-1}$$
+
+Tanto $dy$ como $\varphi$ son formas de volumen sobre sus respectivos factores en $M \times \mathbb R$. Entonces $\omega^n$ es una forma de volumen sobre $M \times \mathbb R$, por ende $\omega$ es no degenerada, por ende $\omega$ es simpléctica.
+\end{solution}

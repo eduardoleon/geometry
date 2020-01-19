@@ -1,0 +1,32 @@
+\begin{problem}
+Sea $(M, \omega)$ una variedad simpléctica de dimensión $2n+2$. Sea $X \in \mathfrak X^\infty(M)$ un campo de Liouville, i.e., tal que $\mathcal L_X \omega = \omega$.
+
+\begin{enumerate}
+    \item Muestre que la $1$-forma $\alpha = \iota_X \omega$ es de contacto en cualquier hipersuperficie de $M$ transversa a $X$.
+    
+    \item Sea $M = \mathbb R^{2n+2}$ con la forma simpléctica estándar. Considere el campo vectorial
+    $$X = \frac 12 \sum_i \left( x_i \frac \partial {\partial x_i} + y_i \frac \partial {\partial y_i} \right)$$
+    
+    Exhiba la estructura de contacto sobre la hipersuperficie transversa a $X$. ¿Es ésta la esfera $S^{2n+1}$ con su estructura de contacto estándar?
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}
+    \item Por definición, $d\omega = 0$. Por la fórmula de Cartan, la hipótesis sobre $X$ se reduce a
+    $$\mathcal L_X \omega = \iota_X (d\omega) + d(\iota_X \omega) = d(\iota_X \omega) = \omega$$
+    
+    Puesto que $\omega$ es de grado par,
+    $$\alpha \wedge (d\alpha)^n = \iota_X \omega \wedge \omega^n = \frac 1 {n+1} \, \iota_X (\omega^{n+1})$$
+    
+    Esta forma es no degenerada en cualquier subfibrado de $TM$ transverso a $X$. En particular, si $N$ es una hipersuperficie de $M$ transversa a $X$, entonces la forma dada es no degenerada en $TN.$
+    
+    \item No es correcto hablar de \textbf{la} hipersuperficie transversa a $X$, porque existen varias. Por supuesto, una de ellas es la esfera unitaria centrada en el origen. Otra de ellas es el hiperplano $x_0 = 1$.
+    
+    La forma de contacto inducida sobre las hipersuperficies transversas es
+    $$\alpha = \iota_X \omega = \frac 12 \sum_i (x_i \, dy_i - y_i dx_i)$$
+    
+    Si la hipersuperficie en cuestión es la esfera $S^{2n+1}$, entonces $\alpha$ es, salvo el fastidioso factor de escala, la forma de contacto estándar.
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,20 @@
+\begin{problem}
+Sea $M$ una variedad diferenciable. Sea $\tau : \Omega^1(M) \to \Omega^1(M)$ la traslación por $\alpha \in \Omega^1(M)$.
+
+\begin{enumerate}
+    \item Sea $\theta \in \Omega^1(T^\star M)$ la $1$-forma tautológica y sea $\pi : T^\star M \to M$ la proyección del fibrado a su espacio base. Muestre que $\tau^\star \theta - \theta = \pi^\star \alpha$.
+    
+    \item Muestre que $\tau$ es un simplectomorfismo si y sólo si $d\alpha = 0$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+Abreviemos $p = (x, \beta_x)$ y $q = (x, \beta_x + \alpha_x)$ por conveniencia.
+
+\begin{enumerate}
+    \item Por definición, $\theta_p = (d\pi_p)^\star (\beta)$. Además, $\pi \circ \tau = \pi$. Entonces,
+    $$(\tau^\star \theta)_p = (d\tau_p)^\star (d\pi_q)^\star (\beta + \alpha)_x = (d\pi_p)^\star (\beta_x + \alpha_x) = \theta_p + (\pi^\star \alpha)_p$$
+    
+    \item La forma simpléctica de $T^\star M$ es $\omega = -d\theta$. Entonces $\tau^\star \omega = \omega - \pi^\star d\alpha$. Como $\pi$ es una sumersión, el pullback $\pi^\star$ es inyectivo, por ende $\pi^\star d\alpha = 0$ si y sólo si $d\alpha = 0$.
+\end{enumerate}
+\end{solution}

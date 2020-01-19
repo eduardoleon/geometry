@@ -1,0 +1,33 @@
+\begin{problem}
+Sea $(E, \omega)$ un espacio vectorial simpléctico. Dado un subespacio vectorial $F \subseteq E$, considere
+$$F^\omega = \{ e \in E : \omega(e, f) = 0 \text{ para todo } f \in F \}$$
+
+Se dice que $F$ es isotrópico si $F \subseteq F^\omega$, coisotrópico si $F^\omega \subseteq F$ y lagrangiano si $F^\omega = F$.
+
+\begin{enumerate}
+    \item Muestre que $\omega$ es no degenerado si y sólo si la aplicación lineal $\omega^b : E \to E^\star$ definida por $\omega^b(v) : E \to \mathbb R$ con $\omega^b(v)(u) = \omega(v, u)$ es no degenerada.
+    
+    \item Muestre que $\dim F^\omega = \dim E - \dim F$.
+    
+    \item Muestre que $(F^\omega)^\omega = F$.
+    
+    \item Muestre que todo espacio vectorial simpléctico $(E, \omega)$ contiene un subespacio lagrangiano $L \subset E$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}
+    \item Para todo $v \in E$, decir que $\omega(v, E) = 0$ equivale a decir que $\omega^b(v) = 0$. Entonces, $\omega$ es no degenerado si sólo si $\omega^b$ es un isomorfismo.
+    
+    \item Sea $\iota : F \to E$ la inclusión y sea $f = \iota^\star \circ \omega^b$. Por el teorema de rango y nulidad,
+    $$\dim F^\omega = \dim \ker f = \dim E - \dim f(E) = \dim E - \dim F^\star = \dim E - \dim F$$
+    
+    \item Por definición, $F^\omega \subseteq E$ es el subespacio maximal tal que $\omega(F^\omega, F) = \omega(F, F^\omega) = 0$. Por construcción, $F \subseteq (F^\omega)^\omega$. Además, $\dim F = \dim (F^\omega)^\omega$. Entonces $F = (F^\omega)^\omega$.
+    
+    \item Dado un subespacio $F \subseteq E$ isotrópico pero no lagrangiano, tomemos una recta $L \subseteq F^\omega$ no contenida en $F$ y pongamos $G = F \oplus L$. Por linealidad,
+    $$\omega(G, G) = \omega(F, F) + \omega(F, L) + \omega(L, F) + \omega(L, L) = 0$$
+    
+    Entonces $G$ también es isotrópico. Por construcción, la nueva brecha dimensional $\dim G^\omega - \dim G$ es más corta que la brecha original $\dim F^\omega - \dim F$. Por inducción, todo subespacio isotrópico se puede incrustar en un subespacio lagrangiano. Subespacios isotrópicos no hacen falta, tomemos $F = 0$.
+\end{enumerate}
+\end{solution}

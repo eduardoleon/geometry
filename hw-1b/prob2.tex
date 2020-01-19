@@ -1,0 +1,10 @@
+\begin{problem}
+Sea $M$ una variedad diferenciable y sea $\eta \in \Omega^1(M)$. Muestre que $\eta$ es de contacto si y sólo si $\omega = d(r^2 \eta)$ es una forma simpléctica sobre el cono $M \times \mathbb R^+$.
+\end{problem}
+
+\begin{solution}
+Sea $\dim M = 2n+1$ y sea $s = r^{2n+2}$. Por el problema 7 de la parte 1 de la tarea,
+$$\omega^{n+1} = (2r \, dr \wedge \eta + r^2 \, d\eta)^{n+1} = ds \wedge \eta \wedge (d\eta)^n$$
+
+Por definición, $\omega$ es exacta, por ende es cerrada. Entonces $\omega$ es una forma simpléctica si y sólo si $\omega^{n+1}$ es una forma de volumen, si y sólo si $\eta \wedge (d\eta)^n$ es no degenerada, si y sólo si $\eta$ es una forma de contacto.
+\end{solution}

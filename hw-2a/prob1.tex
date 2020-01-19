@@ -1,0 +1,51 @@
+\begin{problem}
+Muestre que $\mathbb {CP}^1$ es isomorfo a la esfera $S^2$.
+\end{problem}
+
+\begin{solution}
+Topológicamente, la esfera de Riemann $\mathbb {CP}^1$ es la compactificación de Alexandroff del plano $\mathbb C$, y la esfera usual $S^2$ es la compactificación de Alexandroff del plano $\mathbb R^2$. Por supuesto, los planos $\mathbb C$ y $\mathbb R^2$ son homeomorfos. Puesto que la compactificación de Alexandroff es una construcción funtorial en la categoría topológica, las esferas $\mathbb {CP}^1$ y $S^2$ son homeomorfas.
+
+Toda variedad topológica de dimensión real menor que $4$ admite una única estructura diferenciable. Es consecucencia inmediata que las esferas $\mathbb {CP}^1$ y $S^2$ son difeomorfas. Sin embargo, en el siguiente problema, necesitaremos un difeomorfismo explícito. Por ello, y solamente por ello, construiremos un atlas de $S^2$ que puede ser identificado con el atlas estándar de $\mathbb {CP}^1$.
+
+Sea $\mathbf i, \mathbf j, \mathbf k$ la base estándar de $\mathbb R^3$. La parametrización de $S^2$ en coordenadas esféricas es
+\begin{align*}
+    \mathbf p = \cos \varphi \mathbf q + \sin \varphi \mathbf k &&
+    \mathbf q = \cos \theta  \mathbf i + \sin \theta  \mathbf j
+\end{align*}
+
+La proyección estereográfica desde el polo norte identifica cada punto $\mathbf p \in S^2$ distinto de $\mathbf k$ con el único punto $\mathbf r = x \mathbf i + y \mathbf j$ tal que $\mathbf k, \mathbf p, \mathbf r$ son colineales. Existe $h < 1$ tal que
+$$\mathbf p = (1-h) \mathbf r + h \mathbf k$$
+
+Puesto que $\mathbf i, \mathbf j, \mathbf k$ son linealmente independientes,
+$$\mathbf r = r \mathbf q \implies \mathbf p = (1-h)r \mathbf q + h \mathbf k$$
+
+Puesto que $\mathbf k, \mathbf q$ son perpendiculares, por el teorema de Pitágoras,
+\begin{align*}
+    (1-h)^2 r^2 + h^2 = 1   & \implies r^2 = \frac {1 - h^2} {(1-h)^2} = \frac {1+h} {1-h} = \frac 2 {1-h} - 1 \\
+    1-h = \frac 2 {1 + r^2} & \implies h = 1 - \frac 2 {1 + r^2} = \frac {r^2 - 1} {r^2 + 1}
+\end{align*}
+
+Pensemos en $\mathbf r$ como el número complejo $z = re^{i\theta}$ e identifiquemos las parametrizaciones
+\begin{align*}
+    f : \mathbb C & \longrightarrow \mathbb {CP}^1 & \tilde f : \mathbb R^2 & \longrightarrow S^2 \\
+                z & \longmapsto     [1:z]          &            \mathbf r   & \longmapsto     \mathbf p
+\end{align*}
+
+Nuestro objetivo es conseguir otra parametrización local de $S^2$ tal que podamos identificar
+\begin{align*}
+    g : \mathbb C & \longrightarrow \mathbb{CP}^1 & \tilde g : \mathbb R^2 & \longrightarrow S^2 \\
+                z & \longmapsto     [z:1]         &            \mathbf r   & \longmapsto     \mathbf p'
+\end{align*}
+
+Por construcción, el cambio de coordenadas entre $f$ y $g$ es la inversa multiplicativa. Denotemos con un apóstrofe el efecto de sustituir $z$ con $z' = z^{-1}$. Entonces,
+$$r' = r^{-1}, \qquad \theta' = -\theta, \qquad \mathbf q' = \cos \theta \mathbf i - \sin \theta \mathbf j$$
+
+La altura $h$ se sustituye con su negativo, porque
+$$h' = \frac {(r')^2 - 1} {(r')^2 + 1} = \frac {(rr')^2 - r^2} {(rr')^2 + r^2} = \frac {1 - r^2} {1 + r^2} = -h$$
+
+El ancho $(1-h)r$ se mantiene constante, porque
+$$(1-h')r' = (1+h)r^{-1} = (1-h)r$$
+
+Sustituyendo en la expresión original,
+$$\mathbf p' = (1-h)r \mathbf q' - h \mathbf k$$
+\end{solution}

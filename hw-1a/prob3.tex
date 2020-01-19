@@ -1,0 +1,26 @@
+\begin{problem}
+Sea $(E, \omega)$ un espacio vectorial simpléctico y sea $F \subseteq E$ un subespacio vectorial.
+
+\begin{enumerate}
+    \item Muestre que $\ker (\omega|_F) = F \cap F^\omega$.
+    
+    \item Considere el siguiente espacio ``simpléctico'':
+    $$E_F = \frac F {F \cap F^\omega}$$
+    
+    A partir de $\omega$, defina una $2$-forma en $E_F$ que haga de $E_F$ un espacio cociente simpléctico.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}
+    \item Sea $\iota : F \to E$ la inclusión. Entonces $(\iota^\star \omega)^b = \iota^\star \circ \omega^b \circ \iota$. Por definición, $F^\omega = \ker (\iota^\star \circ \omega^b)$. Entonces $\ker (\iota^\star \omega) = \ker (\iota^\star \omega)^b$ es la preimagen de $F^\omega$ bajo la inclusión, es decir, $F \cap F^\omega$.
+    
+    \item Definamos la $2$-forma $\tau : E_F \times E_F \to \mathbb R$ por $\tau([u], [v]) = \omega(u, v)$. Entonces:
+    \begin{itemize}
+        \item $\tau$ está bien definida porque $\omega$ es constante en cada clase módulo $\ker \omega = F \cap F^\omega$.
+        \item $\tau$ es antisimétrica porque $\tau([v], [u]) = \omega(v, u) = -\omega(u, v) = \tau([u], [v])$.
+        \item $\tau$ es no degenerada porque $\tau^b([u]) = \tau^b([v])$ si y sólo si $u - v \in \ker (\iota^\star \omega)$, es decir, $[u] = [v]$.
+    \end{itemize}
+\end{enumerate}
+\end{solution}

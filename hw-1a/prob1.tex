@@ -1,0 +1,27 @@
+\begin{problem}
+\leavevmode
+\begin{enumerate}
+    \item Considere $\mathbb R^{2n}$ con base $\{ e_1 \dots e_n, f_1 \dots f_n \}$. Muestre que la $2$-forma $\omega$ que satisface $\omega(e_i, e_j) = 0$, $\omega(f_i, f_j) = 0$ y $\omega(e_i, f_j) = \delta_{ij}$ define una estructura simpléctica en $\mathbb R^{2n}$.
+    
+    \item Sea $V$ un espacio vectorial de dimensión finita y $V^\star$ su respectivo espacio dual. Considere el espacio $E = V \oplus V^\star$ y el mapa $\omega : E \to \mathbb R$ definido por $\omega(u \oplus \alpha, v \oplus \beta) = \beta(u) - \alpha(v)$. Muestre que $(E, \omega)$ es un espacio vectorial simpléctico.
+    
+    \item Sean $E = \mathbb C^n$ y $h : E \times E \to \mathbb C$ un producto hermitiano complejo positivo. Muestre que $E$, visto como el espacio vectorial real $\mathbb R^{2n}$ y con la forma bilineal $\omega = {\im} \circ h$, es un espacio vectorial simpléctico.
+    
+    \item Muestre de manera explícita que estos tres espacios son simplectomorfos.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}
+    \item La matriz que representa a $\omega$ en esta base es nuestra matriz favorita
+    $$[\omega] = \begin{bmatrix} 0 & I_n \\ -I_n & 0 \end{bmatrix}$$
+    Por inspección directa, $[\omega]$ es una matriz antisimétrica y sus filas son linealmente independientes. Por ende, $\omega$ es una forma bilineal antisimétrica no degenerada.
+    
+    \item Sea $\{ v_1 \dots v_n \}$ una base de $V$ y sea $\{ v_1^\star, \dots v_n^\star \}$ la base dual correspondiente de $V^\star$. Consideremos la base $\{ e_1 \dots e_n, f_1 \dots f_n \}$ de $E$ definida por $e_i = v_i \oplus 0$ y $f_i = 0 \oplus v_i^\star$. En esta base, $\omega(e_i, e_j) = 0$, $\omega(f_i, f_j) = 0$ y $\omega(e_i, f_j) = \delta_{ij}$ Por ende $\omega$ es una forma simpléctica sobre $E$.
+    
+    \item Existe una base ortonormal compleja $\{ u_1 \dots u_n \}$ tal que $h(u_k, u_k) = a_k^2$ y $h(u_k, u_l) = 0$ para $k \ne l$. Por hipótesis, $a_k^2 \ne 0$. Para cada $k$, elijamos arbitrariamente una raíz cuadrada $a_k \ne 0$. Consideremos la base $\{ e_1 \dots e_n, f_1 \dots f_n \}$ de $E$ definida por $e_k = u_k / a_k$ y $f_k = i u_k / a_k$. En esta base, $\omega(e_k, e_l) = 0$, $\omega(f_k, f_l) = 0$ y $\omega(e_k, f_l) = \delta_{ij}$. Por ende $\omega$ es una forma simpléctica sobre $E$.
+    
+    \item Identifiquemos de la manera obvia las bases simplécticas $\{ e_1 \dots e_n, f_1 \dots f_n \}$ de los tres casos.
+\end{enumerate}
+\end{solution}

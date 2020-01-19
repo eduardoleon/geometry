@@ -1,0 +1,42 @@
+\begin{problem}
+Considere las imágenes de la esfera unitaria $S^n \subset \mathbb R^{n+1}$ vía las aplicaciones
+\begin{align*}
+    F : \mathbb R^n \times \mathbb R & \longrightarrow \mathbb R^n \times \mathbb R^n &
+    G : \mathbb R^n \times \mathbb R & \longrightarrow \mathbb R^n \times \mathbb R^n \times \mathbb R \\
+    (x, a) & \longmapsto (x, 2ax) & (x, a) & \longmapsto (x, 2ax, 2a - \tfrac 43 a^3)
+\end{align*}
+
+\begin{enumerate}
+    \item Muestre que la restricción de $F$ a $S^n$ es una inmersión.
+    \item Muestre que $F(S^n)$ es un lagrangiano de $\mathbb R^{2n}$ con la forma simpléctica estándar $\omega$.
+    \item Muestre que la restricción de $G$ a $S^n$ es un encaje.
+    \item Muestre que $G(S^n)$ es un legendriano de $\mathbb R^{2n+1}$ con la forma de contacto estándar $\eta$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+Tengamos presente que, en la esfera,
+$$\sum_i x_i^2 = 1 - a^2, \qquad \sum_i x_i \, dx_i = -a \, da$$
+
+\begin{enumerate}
+    \item Aplicando $F^\star$ a la base estándar de $T^\star \mathbb R^{2n}$, tenemos
+    $$F^\star dx_i = dx_i, \qquad F^\star dy_i = 2a \, dx_i + 2x_i \, da$$
+    
+    En los polos norte y sur, $F^\star dx_1 \dots F^\star dx_n$ generan $T^\star S^n$. En el resto de la esfera, por lo menos una coordenada $x_i$ es distinta de cero. Entonces $F^\star dx_1 \dots F^\star dx_n, F^\star dy_i$ generan $T^\star \mathbb R^{n+1}$, que contiene a $T^\star S^n$. Puesto que la imagen de $F^\star$ a contiene a $T^\star S^n$, la restricción de $F$ a $S^n$ es una inmersión.
+    
+    \item Aplicando $F^\star$ a la forma simpléctica estándar, tenemos
+    $$F^\star \omega = \sum_i F^\star dx_i \wedge F^\star dy_i = \sum_i 2x_i \, dx_i \wedge da$$
+    
+    Restringiéndonos a la esfera, $F^\star \omega = -2a \, da^2 = 0$. Por ende, $F(S^n)$ es una subvariedad isotrópica de $\mathbb R^{2n}$. Puesto que $F(S^n)$ de dimensión $n$, es un lagrangiano de $\mathbb R^{2n}$.
+    
+    \item Todo punto de $F(S^n)$ tiene exactamente una preimagen en $S^n$, excepto $F(0, \pm 1) = (0, 0)$, que tiene dos. La definición de $G$ mantiene estos puntos separados: $G(0, \pm 1) = (0, 0, \pm \tfrac 23)$. Por ende, $G$ es una inmersión inyectiva propia, i.e., un encaje.
+    
+    \item Aplicando $G^\star$ a los términos de la forma de contacto estándar, tenemos
+    $$G^\star dz = (2 - 4a^2) \, da, \qquad G^\star (x_i \, dy_i) = 2ax_i \, dx_i + 2x_i^2 \, da$$
+    
+    Restringiéndonos a la esfera,
+    $$\sum_i G^\star (x_i \, dy_i) = -2a^2 \, da + 2(1 - a^2) \, da = G^\star dz$$
+    
+    Entonces, $G^\star \eta = 0$. Por ende, $G(S^n)$ es una subvariedad isotrópica de $\mathbb R^{2n+1}$. Puesto que $G(S^n)$ es de dimensión $n$, es un legendriano de $\mathbb R^{2n+1}$.
+\end{enumerate}
+\end{solution}

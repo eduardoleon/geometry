@@ -1,0 +1,41 @@
+\begin{problem}
+Sea $(M,J)$ una variedad casi compleja. Decimos que una métrica $g : TM \otimes_\mathrm{sym}  TM \to \mathbb R$ es hermitiana si satisface $g(X,Y) = g(JX,JY)$ para todo par de campos vectoriales $X, Y \in \mathfrak X^\infty(M)$. Ésta es una condición de compatibilidad entre la estructura compleja y la estructura riemanniana.
+
+Muestre que toda métrica hermitiana se puede extender de manera $\mathbb C$-lineal a un único producto escalar hermitiano $G$ sobre el fibrado complejificado $TM \otimes_\mathbb R \mathbb C$ de tal manera que
+\begin{enumerate}
+    \item $G(\bar Z, \bar W) = \overline {G(Z,W)}$, para todo $Z, W \in TM \otimes_\mathbb R \mathbb C$.
+    \item $G(Z, \bar Z) \ge 0$ para todo $Z \in TM \otimes_\mathbb R \mathbb C$, con igualdad si y sólo si $Z = 0$.
+    \item $G(Z, \bar W) = 0$, para todo $Z \in TM^{1,0}$ y $W \in TM^{0,1}$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+La única extensión $\mathbb C$-lineal de la métrica es la extensión de escalares
+$$G(X \otimes \lambda, Y \otimes \mu) = \lambda \mu g(X,Y)$$
+
+La conjugación de campos complejos es inducida por la conjugación de escalares
+$$\overline {X \otimes \lambda} = X \otimes \bar \lambda$$
+
+Vale la pena aclarar que, en general, los elementos de $TM \otimes_\mathbb R \otimes \mathbb C$ no son tensores simples. Sin embargo, las dos definiciones anteriores se extienden fácilmente a los tensores de mayor rango por $\mathbb R$-linealidad.
+
+Verifiquemos que se cumplen las tres propiedades solicitadas:
+\begin{enumerate}
+    \item Si $Z = X \otimes \lambda$ y $W = Y \otimes \mu$ son tensores simples, entonces
+    $$G(\bar Z, \bar W) = G(X \otimes \bar \lambda, Y \otimes \bar \mu) = g(X,Y) \otimes \overline {\lambda \mu} = \overline {G(Z,W)}$$
+    
+    Esta propiedad se extiende a los tensores de mayor rango por $\mathbb R$-linealidad.
+    
+    \item Todo elemento $Z \in TM \otimes_\mathbb R \mathbb C$ tiene una representación canónica $Z = X \otimes 1 + Y \otimes \, i$. Entonces,
+    $$G(Z, \bar Z) = g(X,X) + ig(Y,X) - ig(X,Y) + g(Y,Y)$$
+    
+    Los términos imaginarios se cancelan mutuamente, porque $g$ es simétrica. Los términos reales son no negativos y cada uno se anula sólo cuando el correspondiente sumando de $Z$ se anula, porque $g$ es positiva definida.
+    
+    \item La representación canónica de $Z \in TM^{1,0}$ es $Z = X \otimes 1 - JX \otimes \, i$. Análogamente, la representación canónica de $W \in TM^{0,1}$ es $W = Y \otimes 1 + JY \otimes \, i$. Entonces,
+    $$G(Z, \bar W) = g(X,Y) + ig(X,JY) + ig(JX,Y) - g(JX,JY)$$
+    
+    Los términos reales se cancelan porque $g$ es compatible con $J$. Además,
+    $$g(X,JY) = g(JX,J^2Y) = -g(JX,Y)$$
+    
+    Por ende, los términos imaginarios de $G(Z, \bar W)$ también se cancelan.
+\end{enumerate}
+\end{solution}

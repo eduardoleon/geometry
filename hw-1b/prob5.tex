@@ -1,0 +1,9 @@
+\begin{problem}
+Muestre que toda función holomorfa $f : M \to \mathbb C$ sobre una variedad compleja compacta $M$ es localmente constante.
+\end{problem}
+
+\begin{solution}
+Supongamos sin pérdida de generalidad que $M$ es conexa. Puesto que $M$ es compacta, $|f|$ toma un valor máximo en algún punto $p \in M$. Puesto que $M$ no tiene borde, $p$ es un punto interior de $M$. Por el principio del módulo máximo, $f$ es constante en una vecindad $U \subset M$ de $p$.
+
+Definamos $g : M \to \mathbb C$ por $g(x) = f(p)$. Tanto $f$ como $g$ son extensiones analíticas de $f|_U$ a $M$. Puesto que $M$ es conexa, $f|_U$ no admite extensiones analíticas distintas. Por ende, $f = g$.
+\end{solution}

@@ -1,0 +1,30 @@
+\begin{problem}
+Muestre que los grassmannianos complejos son variedades complejas.
+\end{problem}
+
+\begin{solution}
+Sea $U$ el espacio de monomorfismos lineales $\alpha : \mathbb C^k \to \mathbb C^n$ y sea $H_n = \GL(n, \mathbb C)$ el grupo general lineal. El grassmanniano $G = \operatorname{Gr}(k, \mathbb C^n)$ es el espacio de $k$-planos en $\mathbb C^n$.
+
+Por álgebra lineal, todo $\alpha \in U$ parametriza a un único $\pi \in G$, todo $\pi \in G$ es parametrizado por algún $\alpha \in U$, y dos $\alpha, \beta \in U$ parametrizan el mismo $\pi \in G$ si y sólo si existe $\psi \in H_k$ tal que $\beta = \alpha \circ \psi$. Por ende el grassmanniano $G$ es el espacio de órbitas $U / H_k$ de la acción natural de $H_k$ sobre $U$.
+
+Sean $\mu : \mathbb C^n \to \mathbb C^k$ la proyección sobre las $k$ primeras coordenadas y $\nu : \mathbb C^n \to \mathbb C^{n-k}$ la proyección sobre las $n-k$ coordenadas restantes. Sea $\Sigma$ el espacio de secciones lineales $\sigma : \mathbb C^k \to \mathbb C^n$ de $\mu$, vale decir, tales que $\mu \circ \sigma = \id$. Todo $\sigma \in \Sigma$ está determinado por $\nu \circ \sigma$. Por ende, $\Sigma$ es isomorfo al espacio de aplicaciones lineales arbitrarias $\lambda : \mathbb C^k \to \mathbb C^{n-k}$. Por ende, $\Sigma$ es una variedad afín no singular.
+
+Para todo $\rho \in H_n$, la vecindad $V_\rho \subset G$ está formada los $\pi \in G$ que tienen un representante $\alpha \in U$ para el cual $\mu \circ \rho \circ \alpha = \id$. Este representante es forzosamente único, pues si $\psi \in H_k$ satisface $\mu \circ \rho \circ \alpha \circ \psi = \id$, entonces $\psi = \id$. Definamos la carta $\varphi_\rho : V_\rho \to \Sigma$ por $\varphi_\rho(\pi) = \rho \circ \alpha$. Esta carta es una biyección, porque la preimagen de $\sigma \in \Sigma$ consta del único punto $\varphi_\rho^{-1}(\sigma) = [\rho^{-1} \circ \sigma]$.
+
+Por álgebra lineal, para todo $\alpha \in U$, existe $\rho \in H_n$ tal que $\mu \circ \rho \circ \alpha = \id$. Por ende, $H_n$ actúa de forma transitiva sobre $G$ y las vecindades distinguidas $V_\rho$ cubren $G$.
+
+Sean $\rho, \rho' \in H_n$ y abreviemos $\chi = \rho' \circ \rho^{-1}$ por conveniencia. Existe una función $\psi : V_\rho \cap V_{\rho'} \to H_k$ que satisface la ecuación de cambio de coordenadas
+$$\varphi_{\rho'}(\pi) = \rho' \circ \alpha' = \chi \circ \rho \circ \alpha \circ \psi(\pi) = \chi \circ \varphi_\rho(\pi) \circ \psi(\pi)$$
+
+De hecho, se verifica inmediatamente que
+$$\id = \mu \circ \varphi_{\rho'}(\pi) = \mu \circ \chi \circ \varphi_\rho(\pi) \circ \psi(\pi)$$
+
+Sustituyendo en la ecuación anterior, tenemos
+$$\varphi_{\rho'}(\pi) = \chi \circ \varphi_\rho(\pi) \circ [\mu \circ \chi \circ \varphi_\rho(\pi)]^{-1}$$
+
+Las funciones de transición son algebraicas, por ende $G$ es una variedad algebraica. Todas las cartas de este atlas son no singulares, por ende $G$ es una variedad algebraica no singular.
+
+Hasta este momento, el argumento ha sido puramente algebraico y funciona sobre cualquier cuerpo. El último paso require usar información específica acerca de $\mathbb C$.
+
+Sea $U$ el espacio de encajes isométricos lineales $\alpha : \mathbb C^k \to \mathbb C^n$ con respecto al producto interno estándar y sea $H_k = \Un(k)$ el grupo unitario. El grassmanniano $G$ es el espacio de órbitas $U / H_k$ de la acción natural de $H_k$ sobre $U$, por el mismo argumento que antes. Haciendo todos los ajustes necesarios en el mamotreto anterior, obtenemos un subatlas del atlas original, que forzosamente induce la misma topología. Puesto que $U$ es Hausdorff y $H_k$ es compacto, el cociente $G = U/H_k$ es Hausdorff. Puesto que $U$ es segundo contable, el cociente $G = U/H_k$ lo es con mayor razón aún. Entonces $G$ es una variedad compleja.
+\end{solution}

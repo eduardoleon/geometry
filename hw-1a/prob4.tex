@@ -1,0 +1,19 @@
+\begin{problem}
+Sea $M$ una variedad diferenciable y sea $T^\star M$ su fibrado cotangente. Muestre que la $1$-forma tautológica $\theta \in \Omega^1(T^\star M)$ es la única con la propiedad de que $\alpha^\star \theta = \alpha$ para todo $\alpha \in \Omega^1(M)$.
+\end{problem}
+
+\begin{solution}
+Sea $\alpha = \sum_i \xi_i \, dx_i$. El diferencial de $\alpha : M \to T^\star M$ es
+\begin{align*}
+    d\alpha : TM & \longrightarrow T(T^\star M) \\
+    \J {} {x_i}  & \longmapsto     \J {} {x_i} + \sum_j \J {\xi_j} {x_i} \J {} {\xi_j}
+\end{align*}
+
+Sea $\theta = \sum_i u_i \, dx_i + \sum_j v_j \, d\xi_j$. Entonces,
+$$(\alpha^\star \theta)_x = \theta_p \circ d\alpha_x = \sum_i \left[ u_i + \sum_j v_j \, \J {\xi_j} {x_i} \right] dx_i$$
+
+Supongamos que $\alpha^\star \theta = \alpha$. Puesto que $dx_1 \dots dx_n$ son linealmente independientes,
+$$\xi_i = u_i + \sum_j v_j \J {\xi_j} {x_i}$$
+
+Supongamos que $\alpha$ es genérica. Entonces no existe ninguna relación no trivial entre $\xi_i$ y sus derivadas direccionales. Por ende $u_i = \xi_i$ y $v_j = 0$, es decir, $\theta$ es necesariamente la $1$-forma tautológica.
+\end{solution}
